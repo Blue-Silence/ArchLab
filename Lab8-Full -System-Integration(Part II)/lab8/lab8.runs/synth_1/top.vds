@@ -1,0 +1,413 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Mar  1 16:25:00 2023
+# Process ID: 20916
+# Current directory: E:/lab8_student_vivado/lab8/lab8.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: E:/lab8_student_vivado/lab8/lab8.runs/synth_1/top.vds
+# Journal file: E:/lab8_student_vivado/lab8/lab8.runs/synth_1\vivado.jou
+# Running On: LAPTOP-2JAIP2V1, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 17024 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 376.191 ; gain = 64.938
+Command: read_checkpoint -auto_incremental -incremental E:/lab8_student_vivado/lab8/lab8.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from E:/lab8_student_vivado/lab8/lab8.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7028
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [E:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'ALUReslt', assumed default net type 'wire' [E:/lab8_student_vivado/MIPS.v:131]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1186.305 ; gain = 409.336
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [E:/lab8_student_vivado/top.v:21]
+INFO: [Synth 8-6157] synthesizing module 'clockdiv' [E:/lab8_student_vivado/clockdiv.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clockdiv' (0#1) [E:/lab8_student_vivado/clockdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MIPS' [E:/lab8_student_vivado/MIPS.v:21]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [E:/lab8_student_vivado/InstructionMemory.v:21]
+INFO: [Synth 8-3876] $readmem data file 'insmem_h.txt' is read successfully [E:/lab8_student_vivado/InstructionMemory.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [E:/lab8_student_vivado/InstructionMemory.v:21]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [E:/lab8_student_vivado/RegisterFile.v:21]
+INFO: [Synth 8-6157] synthesizing module 'reg_half' [E:/lab8_student_vivado/reg_half.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'reg_half' (0#1) [E:/lab8_student_vivado/reg_half.v:40]
+WARNING: [Synth 8-7071] port 'spo' of module 'reg_half' is unconnected for instance 'i_portA' [E:/lab8_student_vivado/RegisterFile.v:39]
+WARNING: [Synth 8-7023] instance 'i_portA' of module 'reg_half' has 7 connections declared, but only 6 given [E:/lab8_student_vivado/RegisterFile.v:39]
+WARNING: [Synth 8-7071] port 'spo' of module 'reg_half' is unconnected for instance 'i_portB' [E:/lab8_student_vivado/RegisterFile.v:47]
+WARNING: [Synth 8-7023] instance 'i_portB' of module 'reg_half' has 7 connections declared, but only 6 given [E:/lab8_student_vivado/RegisterFile.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [E:/lab8_student_vivado/RegisterFile.v:21]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [E:/lab8_student_vivado/ALU.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [E:/lab8_student_vivado/ALU.v:21]
+WARNING: [Synth 8-689] width (1) of port connection 'result' does not match port width (32) of module 'ALU' [E:/lab8_student_vivado/MIPS.v:131]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [E:/lab8_student_vivado/DataMemory.v:21]
+INFO: [Synth 8-3876] $readmem data file 'datamem_h.txt' is read successfully [E:/lab8_student_vivado/DataMemory.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (0#1) [E:/lab8_student_vivado/DataMemory.v:21]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [E:/lab8_student_vivado/ControlUnit.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [E:/lab8_student_vivado/ControlUnit.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'MIPS' (0#1) [E:/lab8_student_vivado/MIPS.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [E:/lab8_student_vivado/top.v:21]
+WARNING: [Synth 8-3848] Net ALUResult in module/entity MIPS does not have driver. [E:/lab8_student_vivado/MIPS.v:55]
+WARNING: [Synth 8-3848] Net ReadData in module/entity MIPS does not have driver. [E:/lab8_student_vivado/MIPS.v:60]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1276.969 ; gain = 500.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.969 ; gain = 500.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.969 ; gain = 500.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1276.969 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/lab8_student_vivado/top.xdc]
+Finished Parsing XDC File [E:/lab8_student_vivado/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/lab8_student_vivado/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1322.652 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1322.652 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [E:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	  65 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 9     
+	   4 Input   32 Bit        Muxes := 1     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                   | Inference | Size (Depth x Width) | Primitives     | 
++------------+------------------------------+-----------+----------------------+----------------+
+|top         | processor/i_dmem/DataArr_reg | Implied   | 64 x 32              | RAM64X1S x 32  | 
++------------+------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                   | Inference | Size (Depth x Width) | Primitives     | 
++------------+------------------------------+-----------+----------------------+----------------+
+|top         | processor/i_dmem/DataArr_reg | Implied   | 64 x 32              | RAM64X1S x 32  | 
++------------+------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_0_0/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_1_1/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_2_2/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_3_3/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_4_4/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_5_5/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_6_6/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_7_7/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_8_8/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_9_9/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_10_10/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_11_11/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_12_12/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_13_13/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_14_14/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_15_15/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_16_16/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_17_17/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_18_18/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_19_19/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_20_20/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_21_21/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_22_22/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_23_23/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_24_24/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_25_25/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_26_26/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_27_27/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_28_28/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_29_29/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_30_30/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 1st driver pin 'processor/i_dmem/DataArr_reg_0_63_31_31/O' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin O with 2nd driver pin 'GND' [E:/lab8_student_vivado/DataMemory.v:35]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net O is connected to at least one constant driver which has been preserved, other driver is ignored [E:/lab8_student_vivado/DataMemory.v:35]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |reg_half      |         2|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |reg_half |     2|
+|3     |BUFG     |     1|
+|4     |CARRY4   |    16|
+|5     |LUT1     |     3|
+|6     |LUT2     |     6|
+|7     |LUT3     |     6|
+|8     |LUT4     |    16|
+|9     |LUT5     |    24|
+|10    |LUT6     |    72|
+|11    |FDCE     |    19|
+|12    |FDPE     |     4|
+|13    |IBUF     |     2|
+|14    |OBUF     |    11|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1322.652 ; gain = 545.684
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 96 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1322.652 ; gain = 500.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1322.652 ; gain = 545.684
+INFO: [Project 1-571] Translating synthesized netlist
+Release 14.7 - ngc2edif P_INT.20191124 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design reg_half.ngc ...
+WARNING:NetListWriters:298 - No output is written to reg_half.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file reg_half.edif ...
+ngc2edif: Total memory usage is 4325660 kilobytes
+
+Reading core file 'E:/lab8_student_vivado/reg_half.ngc' for (cell view 'reg_half', library 'work')
+Parsing EDIF File [./.ngc2edfcache/reg_half_ngc_ffad805a.edif]
+Finished Parsing EDIF File [./.ngc2edfcache/reg_half_ngc_ffad805a.edif]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1331.461 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 272 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Xilinx ngc2edif P_INT.20191124
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1343.109 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 256 instances were transformed.
+  FD => FDRE: 128 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 128 instances
+
+Synth Design complete, checksum: 81106a55
+INFO: [Common 17-83] Releasing license: Synthesis
+45 Infos, 8 Warnings, 96 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1343.109 ; gain = 942.059
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'E:/lab8_student_vivado/lab8/lab8.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  1 16:25:48 2023...
